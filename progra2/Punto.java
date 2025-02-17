@@ -21,7 +21,7 @@ public class Punto {
 
     public void mostrar() {
         System.out.println("Cartesianas: (" + x + ", " + y + ")");
-        System.out.println("Polares: (r = " + getRadio() + ", θ = " + Math.toDegrees(getAngulo()) + "°)");
+        System.out.println("Polares: (r = " + getRadio() + ", Angulo = " + Math.toDegrees(getAngulo()) + "°)");
     }
 
     public static void main(String[] args) {
