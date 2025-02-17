@@ -1,7 +1,7 @@
 public class Punto {
     private double x, y;
 
-    public Punto(double x, double y) {
+    public Punto(float x, float y) {
         this.x = x;
         this.y = y;
     }
