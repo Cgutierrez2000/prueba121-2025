@@ -14,7 +14,7 @@ public class Punto {
         return Math.atan2(y, x); // En radianes
     }
 
-    public void setCoordenadasPolares(double r, double theta) {
+    public void coord_polares(double r, double theta) {
         this.x = r * Math.cos(theta);
         this.y = r * Math.sin(theta);
     }
