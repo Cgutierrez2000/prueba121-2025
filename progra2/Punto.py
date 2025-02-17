@@ -26,7 +26,7 @@ class Punto:
         return math.atan2(self.y, self.x)
 
     # Método para convertir de coordenadas polares a cartesianas
-    def set_coordenadas_polares(self, r, theta):
+    def set_coord_polares(self, r, theta):
         self.x = r * math.cos(theta)
         self.y = r * math.sin(theta)
 
