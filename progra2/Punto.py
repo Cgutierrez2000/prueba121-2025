@@ -39,5 +39,5 @@ if __name__ == "__main__":
     p1.mostrar()
 
     p2 = Punto(0, 0)
-    p2.set_coordenadas_polares(5, math.radians(53.13)) # 53.13° en radianes
+    p2.set_coord_polares(5, math.radians(53.13)) # 53.13° en radianes
     p2.mostrar()
