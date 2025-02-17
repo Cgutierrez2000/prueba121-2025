@@ -1,0 +1,132 @@
+import java.util.Scanner;
+
+public class AplicacionPunto {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Seleccione una opción:");
+        System.out.println("1. Convertir Cartesianas a Polares");
+        System.out.println("2. Convertir Polares a Cartesianas");
+        int opcion = sc.nextInt();
+
+        if (opcion == 1) {
+            System.out.print("Ingrese X: ");
+            double x = sc.nextDouble();
+            System.out.print("Ingrese Y: ");
+            double y = sc.nextDouble();
+
+            Punto p = new Punto(x, y);
+            System.out.println("Coordenadas polares: r = " + p.getRadio() + ", θ = " + Math.toDegrees(p.getAngulo()) + "°");
+        } else if (opcion == 2) {
+            System.out.print("Ingrese r: ");
+            double r = sc.nextDouble();
+            System.out.print("Ingrese θ en grados: ");
+            double theta = Math.toRadians(sc.nextDouble());
+
+            Punto p = new Punto(0, 0);
+            p.setCoordenadasPolares(r, theta);
+            System.out.println("Coordenadas cartesianas: (" + p.getX() + ", " + p.getY() + ")");
+        } else {
+            System.out.println("Opción no válida.");
+        }
+        sc.close();
+    }
+}
+import math
+
+def main():
+    print("Seleccione una opción:")
+    print("1. Convertir Cartesianas a Polares")
+    print("2. Convertir Polares a Cartesianas")
+    opcion = int(input("Opción: "))
+
+    if opcion == 1:
+        x = float(input("Ingrese X: "))
+        y = float(input("Ingrese Y: "))
+
+        p = Punto(x, y)
+        print(f"Coordenadas polares: r = {p.get_radio()}, θ = {math.degrees(p.get_angulo())}°")
+
+    elif opcion == 2:
+        r = float(input("Ingrese r: "))
+        theta = math.radians(float(input("Ingrese θ en grados: ")))
+
+        p = Punto(0, 0)
+        p.set_coordenadas_polares(r, theta)
+        print(f"Coordenadas cartesianas: ({p.get_x()}, {p.get_y()})")
+
+    else:
+        print("Opción no válida.")
+
+if __name__ == "__main__":
+    main()
+
+import java.util.Scanner;
+
+public class SimulacionMovimiento {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Ingrese coordenada X inicial: ");
+        double x = sc.nextDouble();
+        System.out.print("Ingrese coordenada Y inicial: ");
+        double y = sc.nextDouble();
+
+        Punto p = new Punto(x, y);
+
+        System.out.println("Seleccione una dirección para mover el punto:");
+        System.out.println("1. Arriba");
+        System.out.println("2. Abajo");
+        System.out.println("3. Izquierda");
+        System.out.println("4. Derecha");
+        int opcion = sc.nextInt();
+
+        System.out.print("Ingrese la distancia a mover: ");
+        double distancia = sc.nextDouble();
+
+        switch (opcion) {
+            case 1: p.setY(p.getY() + distancia); break; // Arriba
+            case 2: p.setY(p.getY() - distancia); break; // Abajo
+            case 3: p.setX(p.getX() - distancia); break; // Izquierda
+            case 4: p.setX(p.getX() + distancia); break; // Derecha
+            default: System.out.println("Opción no válida."); return;
+        }
+
+        System.out.println("Nueva posición:");
+        p.mostrar();
+
+        sc.close();
+    }
+}
+def main():
+    x = float(input("Ingrese coordenada X inicial: "))
+    y = float(input("Ingrese coordenada Y inicial: "))
+
+    p = Punto(x, y)
+
+    print("Seleccione una dirección para mover el punto:")
+    print("1. Arriba")
+    print("2. Abajo")
+    print("3. Izquierda")
+    print("4. Derecha")
+    opcion = int(input("Opción: "))
+
+    distancia = float(input("Ingrese la distancia a mover: "))
+
+    if opcion == 1:
+        p.set_y(p.get_y() + distancia)  # Arriba
+    elif opcion == 2:
+        p.set_y(p.get_y() - distancia)  # Abajo
+    elif opcion == 3:
+        p.set_x(p.get_x() - distancia)  # Izquierda
+    elif opcion == 4:
+        p.set_x(p.get_x() + distancia)  # Derecha
+    else:
+        print("Opción no válida.")
+        return
+
+    print("Nueva posición:")
+    p.mostrar()
+
+if __name__ == "__main__":
+    main()
